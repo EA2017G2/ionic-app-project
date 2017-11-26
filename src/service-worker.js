@@ -14,9 +14,9 @@ self.toolbox.options.cache = {
 // pre-cache our key assets
 self.toolbox.precache(
   [
-    './build/main.js',
+    './build/play.js',
     './build/vendor.js',
-    './build/main.css',
+    './build/play.css',
     './build/polyfills.js',
     'index.html',
     'manifest.json'

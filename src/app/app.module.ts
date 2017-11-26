@@ -2,20 +2,28 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
-import { MainPage } from '../pages/main/main';
+import { ProfilePage } from '../pages/profile/profile';
+import { ContactsPage } from '../pages/contacts/contacts';
+import { PlayPage } from '../pages/play/play';
+import { ChatPage } from '../pages/chat/chat'
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginComponent } from '../pages/login/login.component';
+import { PlaystartedPage } from '../pages/playstarted/playstarted';
 import { HelpPage } from '../pages/help/help';
+import { AccountPage } from '../pages/account/account';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
     TabsPage,
-    MainPage,
+    PlayPage,
+    ContactsPage,
+    ChatPage,
+    AccountPage,
+    ProfilePage,
+    PlaystartedPage,
     HelpPage,
     LoginComponent
   ],
@@ -26,10 +34,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
     HelpPage,
+    ProfilePage,
     TabsPage,
-    MainPage,
+    ChatPage,
+    ContactsPage,
+    AccountPage,
+    PlaystartedPage,
+    PlayPage,
     LoginComponent
   ],
   providers: [

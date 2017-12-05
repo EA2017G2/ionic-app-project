@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {PlayPage} from "../play/play";
+import {NewLoginPage} from "../newlogin/newlogin";
 
 @Component({
-  selector: 'page-account',
-  templateUrl: 'account.html'
+  selector: 'page-forgetpassword',
+  templateUrl: 'forgetpassword.html'
 })
-export class AccountPage {
+export class ForgetPasswordPage {
 
   constructor(public navCtrl: NavController) {
 
   }
+
   onClick(){
-    this.navCtrl.setRoot(PlayPage);
+    this.navCtrl.setRoot(NewLoginPage);
   }
 }
+
+

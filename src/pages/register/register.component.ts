@@ -3,15 +3,17 @@ import { NavController } from 'ionic-angular';
 import {PlayPage} from "../play/play";
 
 @Component({
-  selector: 'page-account',
-  templateUrl: 'account.html'
+  selector: 'page-register',
+  templateUrl: 'register.component.html'
 })
-export class AccountPage {
+export class RegisterPage {
 
   constructor(public navCtrl: NavController) {
 
   }
+
   onClick(){
     this.navCtrl.setRoot(PlayPage);
   }
 }
+

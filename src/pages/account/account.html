@@ -1,12 +1,72 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Account
+      Account Settings
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="outer-content">
+  <ion-list>
 
- Ajustes de cuenta: cambiar correo, cambiar password...
+
+
+
+
+    <ion-list-header>
+      Change username
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>New username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+
+
+    <ion-list-header>
+      Change city
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>Current city</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+
+
+
+
+    <ion-list-header>
+      Change password
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>New password</ion-label>
+      <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Repeat new password</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+
+
+    <ion-list-header>
+      Add new pictures
+    </ion-list-header>
+    <div class="row">
+      <button ion-button (click)="onClick()" color="secondary" small >Add picture</button>
+    </div>
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <div class="row">
+      <button ion-button (click)="onClick()" color="principal" medium full>Apply changes</button>
+    </div>
+
+  </ion-list>
 </ion-content>

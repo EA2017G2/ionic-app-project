@@ -1,0 +1,31 @@
+
+
+<ion-content class="main-content" style="background-image: url('../../assets/imgs/love4.jpg')">
+  <br />
+  <h1 class="w3-xxlarge w3-text-black w3-wide" align="center"> Welcome to LoveShot </h1>
+  <br>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div class="row">
+    <button ion-button (click)="onClick1()" color="secondary"  full medium>Login</button>
+    <button ion-button (click)="onClick2()" color="default"  full medium>Login with <br><ion-icon name="logo-facebook"></ion-icon></button>
+  </div>
+  <br>
+  <li align="center"><a routerLink="/register.component">Register now</a></li>
+  <li align="center"><a routerLink="/forgetpassword">Forget password??</a></li>
+
+
+</ion-content>

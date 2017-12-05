@@ -15,6 +15,8 @@ export class TabsPage {
   tab3Root = ProfilePage;
   tab4Root = AccountPage;
   tab5Root = HelpPage;
+
+
   constructor() {
 
   }

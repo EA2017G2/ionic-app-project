@@ -2,16 +2,24 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {PlayPage} from "../play/play";
 
+
 @Component({
-  selector: 'page-account',
-  templateUrl: 'account.html'
+  selector: 'page-newlogin',
+  templateUrl: 'newlogin.html'
 })
-export class AccountPage {
+export class NewLoginPage {
 
   constructor(public navCtrl: NavController) {
 
   }
-  onClick(){
+
+  onClick1(){
     this.navCtrl.setRoot(PlayPage);
   }
+
+  onClick2(){
+    this.navCtrl.setRoot(PlayPage);
+  }
+
+
 }

@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Register
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+
+
+    <!--Nombre-->
+    <ion-list-header>
+      Username
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <br>
+    <!--Email-->
+    <ion-list-header>
+      Email
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <br>
+    <!--Fecha de nacimiento*************************************+-->
+
+    <br>
+    <!--Sexo-->
+    <ion-list-header>
+      Gender
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Sex</ion-label>
+      <ion-select [(ngModel)]="sex">
+        <ion-option value="Man">Man</ion-option>
+        <ion-option value="Woman">Woman</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <br>
+    <!--Me interesan-->
+    <ion-list-header>
+      Show me
+    </ion-list-header>
+    <ion-item>
+      <ion-label>I'm finding</ion-label>
+      <ion-select [(ngModel)]="orienation">
+        <ion-option value="Men">Men</ion-option>
+        <ion-option value="Women">Women</ion-option>
+        <ion-option value="Both">Both</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <br>
+    <!--Ciudad-->
+    <ion-list-header>
+      City
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>City</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <br>
+    <!--Contraseña-->
+    <ion-list-header>
+      Password
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <br>
+    <!--Confirmar contraseña-->
+    <ion-item>
+      <ion-label floating>Repeat Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <br>
+    <!--Añadir imagen-->
+    <ion-list-header>
+      Add new pictures
+    </ion-list-header>
+    <div class="row">
+      <button ion-button (click)="onClick()" color="secondary" small >Add picture</button>
+    </div>
+
+
+
+
+  </ion-list>
+
+
+  <div class="row">
+    <button ion-button (click)="onClick()" color="default"  medium full>Register</button>
+  </div>
+
+
+
+  <br>
+  <li align="center"><a routerLink="/loginfacebook">Sign up with Facebook</a></li>    <!--Falta crear componente loginfacebook-->
+  <br>
+
+</ion-content>

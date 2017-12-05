@@ -10,7 +10,10 @@ export class PlaystartedPage {
   constructor(public navCtrl: NavController) {
 
   }
-  onClick2(){
+  doSearch(){
     this.navCtrl.setRoot(ChatPage);
+  }
+  doReject(){
+    this.navCtrl.setRoot(PlaystartedPage);
   }
 }

@@ -1,12 +1,67 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Profile
+      Game Settings
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="outer-content">
+  <ion-list>
 
- Ajustes del perfil: cambiar foto, cambiar filtro, cambiar descripcion, cambiar ciudad...
+<!--
+    <ion-list-header>
+      My current location
+    </ion-list-header>
+
+    -->
+
+
+    <ion-list-header>
+      Distance (Km)
+    </ion-list-header>
+    <ion-item>
+      <ion-range max="300" pin="true"[(ngModel)]="distance"color="blue">
+        <!--<ion-icon range-left small name=""></ion-icon>-->
+        <ion-icon range-right name="map"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+
+    <ion-list-header>
+      Age
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="18" max="75" dualKnobs="true" pin="true" [(ngModel)]="age" color="blue">
+        <!--<ion-icon range-left small name="map"></ion-icon>-->
+        <ion-icon range-right name="man"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+<br>
+
+    <ion-item>
+      <ion-label>Show me</ion-label>
+      <ion-select [(ngModel)]="showme">
+        <ion-option value="f">Men</ion-option>
+        <ion-option value="m">Women</ion-option>
+        <ion-option value="b">Both</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <br>
+    <br>
+    <div class="row">
+      <button ion-button (click)="onClick()" color="principal" medium full>Apply</button>
+    </div>
+
+
+
+
+
+
+
+
+    </ion-list>
 </ion-content>

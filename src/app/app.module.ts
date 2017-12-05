@@ -16,7 +16,11 @@ import { AccountPage } from '../pages/account/account';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {NewLoginPage} from "../pages/newlogin/newlogin";
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from '../pages/auth/tokenInterceptor';
+import { AuthService } from '../pages/auth/authService';
+import { HttpClientModule } from '@angular/common/http';
+import {UserService} from "../pages/services/user.service";
 
 @NgModule({
   declarations: [
@@ -36,7 +40,8 @@ import {NewLoginPage} from "../pages/newlogin/newlogin";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,8 +61,13 @@ import {NewLoginPage} from "../pages/newlogin/newlogin";
   ],
   providers: [
     StatusBar,
+    AuthService,
+    UserService,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ]
 })
 export class AppModule {}

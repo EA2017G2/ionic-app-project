@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {NewLoginPage} from "../newlogin/newlogin";
+import { LoginComponent } from '../login/login.component';
 import {RegisterPage} from "../register/register.component";
 
 @Component({
@@ -14,7 +14,7 @@ export class HelpPage {
   }
 
   onClick(){
-    this.navCtrl.setRoot(NewLoginPage);
+    this.navCtrl.setRoot(LoginComponent);
   }
 
 

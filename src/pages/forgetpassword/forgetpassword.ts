@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {NewLoginPage} from "../newlogin/newlogin";
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'page-forgetpassword',
@@ -13,7 +13,7 @@ export class ForgetPasswordPage {
   }
 
   onClick(){
-    this.navCtrl.setRoot(NewLoginPage);
+    this.navCtrl.setRoot(LoginComponent);
   }
 }
 

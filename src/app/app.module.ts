@@ -15,7 +15,6 @@ import { HelpPage } from '../pages/help/help';
 import { AccountPage } from '../pages/account/account';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {NewLoginPage} from "../pages/newlogin/newlogin";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '../pages/auth/tokenInterceptor';
 import { AuthService } from '../pages/auth/authService';
@@ -35,7 +34,6 @@ import {UserService} from "../pages/services/user.service";
     ProfilePage,
     PlaystartedPage,
     HelpPage,
-    NewLoginPage,
     LoginComponent
   ],
   imports: [
@@ -47,7 +45,6 @@ import {UserService} from "../pages/services/user.service";
   entryComponents: [
     MyApp,
     HelpPage,
-    NewLoginPage,
     ProfilePage,
     TabsPage,
     ChatPage,

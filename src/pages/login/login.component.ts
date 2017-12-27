@@ -3,7 +3,9 @@ import { NavController } from 'ionic-angular';
 import {TabsPage} from '../tabs/tabs';
 import {User} from '../../../../ionic-app-project/src/pages/user';
 import { UserService} from '../services/user.service';
-import {PlayPage} from "../play/play";
+import {PlayPage} from '../play/play';
+import { RegisterPage } from '../register/register.component';
+import { ForgetPasswordPage} from '../forgetpassword/forgetpassword';
 
 @Component({
   selector: 'app-login',
@@ -31,6 +33,14 @@ export class LoginComponent {
   }
   onClick2(){
     this.navCtrl.setRoot(PlayPage);
+  }
+  regisClick(){
+    this.navCtrl.push(RegisterPage);
+
+  }
+  passClick(){
+    this.navCtrl.push(ForgetPasswordPage);
+
   }
 
 }

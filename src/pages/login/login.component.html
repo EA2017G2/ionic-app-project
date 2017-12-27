@@ -23,8 +23,9 @@
     <button ion-button (click)="onClick2()" color="default"  full medium>Login with <br><ion-icon name="logo-facebook"></ion-icon></button>
   </div>
   <br>
-  <li align="center"><a routerLink="/register.component">Register now</a></li>
-  <li align="center"><a routerLink="/forgetpassword">Forget password??</a></li>
+  <button ion-button color="danger" clear (click)="regisClick()">Register now</button>
+  <button ion-button color="danger" clear (click)="passClick()">Forget password?</button>
+
 
 
 </ion-content>

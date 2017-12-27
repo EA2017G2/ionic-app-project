@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {NewLoginPage} from "../newlogin/newlogin";
 import {RegisterPage} from "../register/register.component";
-import {ForgetPasswordPage} from "../forgetpassword/forgetpassword";
 
 @Component({
   selector: 'page-help',

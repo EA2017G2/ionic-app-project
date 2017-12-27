@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {TabsPage} from "../tabs/tabs";
-import { HttpClient } from '@angular/common/http';
-import { Response } from '@angular/http';
+import {TabsPage} from '../tabs/tabs';
 import {User} from '../../../../ionic-app-project/src/pages/user';
 import { UserService} from '../services/user.service';
+import {PlayPage} from "../play/play";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +13,7 @@ export class LoginComponent {
   user: User;
 
 
-  constructor (private http: HttpClient, public navCtrl: NavController, private userService: UserService) {
+  constructor ( public navCtrl: NavController, private userService: UserService) {
     console.log('Hello user');
     this.user = new User();
   }
@@ -29,6 +28,9 @@ export class LoginComponent {
       console.log('Ha habido un error en el login:' + error);
     });
 
+  }
+  onClick2(){
+    this.navCtrl.setRoot(PlayPage);
   }
 
 }

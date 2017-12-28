@@ -20,6 +20,7 @@ import { TokenInterceptor } from '../pages/auth/tokenInterceptor';
 import { AuthService } from '../pages/auth/authService';
 import { HttpClientModule } from '@angular/common/http';
 import {UserService} from "../pages/services/user.service";
+import { Facebook } from '@ionic-native/facebook';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import {UserService} from "../pages/services/user.service";
     StatusBar,
     AuthService,
     UserService,
+    Facebook,
     SplashScreen,
     { provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

@@ -27,5 +27,13 @@
   <button ion-button color="danger" clear (click)="passClick()">Forget password?</button>
 
 
-
+  Prueba registro con facebook.
+  <button ion-button block (click)="loginFacebook()">Login con facebook</button>
+  <ion-item *ngIf="showUser">
+    <ion-avatar item-left>
+      <img [src]="user.picture.data.url" alt="">
+    </ion-avatar>
+    <h2>{{user.name}}</h2>
+    <p>{{user.email}}</p>
+  </ion-item>
 </ion-content>

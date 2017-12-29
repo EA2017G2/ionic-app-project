@@ -20,15 +20,12 @@
 
   <div class="row">
     <button ion-button (click)="onSubmit()" color="secondary"  full medium>Login</button>
-    <button ion-button (click)="onClick2()" color="default"  full medium>Login with <br><ion-icon name="logo-facebook"></ion-icon></button>
+    <button ion-button (click)="loginFacebook()" color="default"  full medium>Login with <br><ion-icon name="logo-facebook"></ion-icon></button>
   </div>
   <br>
   <button ion-button color="danger" clear (click)="regisClick()">Register now</button>
   <button ion-button color="danger" clear (click)="passClick()">Forget password?</button>
 
-
-  Prueba registro con facebook.
-  <button ion-button block (click)="loginFacebook()">Login con facebook</button>
   <ion-item *ngIf="showUser">
     <ion-avatar item-left>
       <img [src]="user.picture.data.url" alt="">

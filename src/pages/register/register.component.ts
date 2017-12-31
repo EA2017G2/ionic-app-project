@@ -6,6 +6,7 @@ import { UserService} from '../services/user.service';
 import {User} from '../../../../ionic-app-project/src/pages/user';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {TabsPage} from "../tabs/tabs";
+import {ProfilePage} from "../profile/profile";
 
 @Component({
   selector: 'page-register',
@@ -44,7 +45,7 @@ export class RegisterPage {
         // console.log('Res: ' + res.token);
         localStorage.setItem('token', res.token);
      //   this.router.navigate(['/main'], {queryParams: {token: res.token}});
-        this.navCtrl.setRoot(TabsPage);
+        this.navCtrl.setRoot(ProfilePage);
       }, error => {
         console.log('Ha habido un error al registrarse:' + error);
       });

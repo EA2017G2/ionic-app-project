@@ -4,6 +4,7 @@ import {TabsPage} from '../tabs/tabs';
 import {User} from '../../../../ionic-app-project/src/pages/user';
 import { UserService} from '../services/user.service';
 import {PlayPage} from '../play/play';
+import { ProfilePage } from '../profile/profile';
 import { RegisterPage } from '../register/register.component';
 import { ForgetPasswordPage} from '../forgetpassword/forgetpassword';
 import { Facebook } from '@ionic-native/facebook';

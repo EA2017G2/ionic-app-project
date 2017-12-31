@@ -9,10 +9,7 @@
 <ion-content>
 
   <ion-list>
-
-
-
-    <!--Nombre-->
+    <!--Nombre
     <ion-list-header>
       Username
     </ion-list-header>
@@ -22,7 +19,7 @@
     </ion-item>
 
     <br>
-    <!--Email-->
+    <!--Email
     <ion-list-header>
       Email
     </ion-list-header>
@@ -34,8 +31,8 @@
     <br>
     <!--Fecha de nacimiento*************************************+-->
 
-    <br>
-    <!--Sexo-->
+
+    <!--Sexo
     <ion-list-header>
       Gender
     </ion-list-header>
@@ -48,7 +45,7 @@
     </ion-item>
 
     <br>
-    <!--Me interesan-->
+    <!--Me interesan
     <ion-list-header>
       Show me
     </ion-list-header>
@@ -63,7 +60,7 @@
 
 
     <br>
-    <!--Ciudad-->
+    <!--Ciudad
     <ion-list-header>
       City
     </ion-list-header>
@@ -73,7 +70,7 @@
     </ion-item>
 
     <br>
-    <!--Contraseña-->
+    <!--Contraseña
     <ion-list-header>
       Password
     </ion-list-header>
@@ -83,33 +80,59 @@
     </ion-item>
 
     <br>
-    <!--Confirmar contraseña-->
+    <!--Confirmar contraseña
     <ion-item>
       <ion-label floating>Repeat Password</ion-label>
       <ion-input type="password"></ion-input>
     </ion-item>
 
     <br>
-    <!--Añadir imagen-->
+    <!--Añadir imagen
     <ion-list-header>
       Add new pictures
     </ion-list-header>
     <div class="row">
       <button ion-button (click)="onClick()" color="secondary" small >Add picture</button>
-    </div>
+    </div>-->
 
-
-
-
+    <form [formGroup]="regisForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <div><ion-label floating>Your birthday</ion-label></div>
+        <ion-input type="date" formControlName="birthday"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select [ngModel]="se" formControlName="sex">
+          <ion-option *ngFor="let se of sex" [value]="se">{{se}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Repeat Password</ion-label>
+        <ion-input type="password" formControlName="password2"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" [disabled]="!regisForm.valid">Submit</button>
+    </form>
   </ion-list>
 
 
-  <div class="row">
+ <!-- <div class="row">
     <button ion-button (click)="onClick()" color="default"  medium full>Sign up</button>
   </div>
 
 
-
+-->
   <br>
   <button ion-button (click)="signUpFacebook()" color="default"  medium full>Sign up facebook</button>  <!--Falta crear componente loginfacebook-->
   <br>

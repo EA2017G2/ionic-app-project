@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {PlayPage} from "../play/play";
+import {TabsPage} from "../tabs/tabs";
 
 @Component({
   selector: 'page-profile',
@@ -16,6 +16,6 @@ export class ProfilePage {
 
   }
   onClick(){
-    this.navCtrl.setRoot(PlayPage);
+    this.navCtrl.setRoot(TabsPage);
   }
 }

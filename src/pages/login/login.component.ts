@@ -28,7 +28,8 @@ export class LoginComponent {
     this.userService.login(this.user).subscribe( res => {
       console.log('Res: ' + res.token);
       localStorage.setItem('token', res.token);
-      this.navCtrl.setRoot(TabsPage);
+     // this.navCtrl.setRoot(TabsPage);
+      this.navCtrl.setRoot(ProfilePage);
     }, error => {
       console.log('Ha habido un error en el login:' + error);
     });

@@ -7,6 +7,7 @@ import {User} from '../../../../ionic-app-project/src/pages/user';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {TabsPage} from "../tabs/tabs";
 import {ProfilePage} from "../profile/profile";
+import moment from 'moment';
 
 @Component({
   selector: 'page-register',
@@ -38,6 +39,17 @@ export class RegisterPage {
       sex: ['', Validators.required],
     });
   }
+
+  createForm2() {
+    this.regisForm = this.fb.group({
+      email: [this.user.email],
+      name : [this.user.name ],
+      birthday: [this.user.birthday],
+      password: ['', Validators.required],
+      password2: ['', Validators.required],
+      sex: [this.user.sex]
+    });
+  }
   onSubmit() {
     if (this.regisForm.value.password === this.regisForm.value.password2) {
       console.log('!!!!!!!!!!!!!!!!!!onSubmit - Sign Up!!!!', this.regisForm.value);
@@ -56,7 +68,7 @@ export class RegisterPage {
 
 
   signUpFacebook(){
-    this.facebook.login(['public_profile', 'email'])
+    this.facebook.login(['public_profile', 'email','user_birthday'])
       .then(rta => {
         console.log(rta.status);
         if(rta.status == 'connected'){
@@ -69,11 +81,15 @@ export class RegisterPage {
   }
 
   getInfo(){
-    this.facebook.api('/me?fields=id,name,email,first_name,picture,last_name,gender',['public_profile','email'])
+    this.facebook.api('/me?fields=id,name,email,first_name,picture,last_name,gender,birthday',['public_profile','email','user_birthday'])
       .then(data=>{
         console.log(data);
         this.showUser = true;
         this.user = data;
+        this.user.sex = data.gender;
+        console.log(this.user);
+        this.createForm2();
+
       })
       .catch(error =>{
         console.error( error );

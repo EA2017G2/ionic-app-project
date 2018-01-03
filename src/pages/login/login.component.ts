@@ -20,7 +20,6 @@ export class LoginComponent {
   constructor ( public navCtrl: NavController, private userService: UserService, private facebook: Facebook) {
     console.log('Hello user');
     this.user = new User();
-
   }
   submitted = false;
   onSubmit() {

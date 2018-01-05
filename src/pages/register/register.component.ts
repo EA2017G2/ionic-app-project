@@ -27,7 +27,7 @@ export class RegisterPage {
   }
 
   onClick(){
-    this.navCtrl.setRoot(PlayPage);
+    this.navCtrl.setRoot(TabsPage);
   }
   createForm() {
     this.regisForm = this.fb.group({

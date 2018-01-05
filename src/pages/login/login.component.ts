@@ -9,6 +9,7 @@ import { RegisterPage } from '../register/register.component';
 import { ForgetPasswordPage} from '../forgetpassword/forgetpassword';
 import { Facebook } from '@ionic-native/facebook';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html'
@@ -28,7 +29,7 @@ export class LoginComponent {
       console.log('Res: ' + res.token);
       localStorage.setItem('token', res.token);
      // this.navCtrl.setRoot(TabsPage);
-      this.navCtrl.setRoot(ProfilePage);
+      this.navCtrl.setRoot(TabsPage);
     }, error => {
       console.log('Ha habido un error en el login:' + error);
     });

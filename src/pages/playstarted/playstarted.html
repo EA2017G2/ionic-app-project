@@ -6,10 +6,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="outer-content">
+  <ion-list>
 
 
-  <h1 class="w3-xxlarge w3-text-black w3-wide" align="center"> Do you want to meet...? </h1>
+  <h5 class="w3-xxlarge w3-text-black w3-wide" align="center"> Do you want to meet...? </h5>
 
 
   <ion-slides>
@@ -25,14 +26,15 @@
   </ion-slides>
 
 
-  <h3 class="w3-xxlarge w3-text-black w3-wide" align="center"> Laura </h3>
-  <h3 class="w3-xxlarge w3-text-black w3-wide" align="center"> 22 </h3>
-  <h3 class="w3-xxlarge w3-text-black w3-wide" align="center"> Barcelona </h3>
-
-
-  <button ion-button color="danger" full (click)="doSearch()"><span class="glyphicon glyphicon-heart"></span></button>
-  <button ion-button color="primary" full (click)="doReject()"><span class="glyphicon glyphicon-remove"></span></button>
+  <h5 class="w3-xxlarge w3-text-black w3-wide" align="center"> Laura </h5>
+  <h5 class="w3-xxlarge w3-text-black w3-wide" align="center"> 22 </h5>
+  <h5 class="w3-xxlarge w3-text-black w3-wide" align="center"> Barcelona </h5>
 
 
 
+  <button ion-button (click)="doSearch()" color="danger"  full medium><ion-icon name="heart"></ion-icon></button>
+  <button ion-button (click)="doReject()" color="primary"  full medium><ion-icon name="close-circle"></ion-icon></button>
+
+
+  </ion-list>
 </ion-content>

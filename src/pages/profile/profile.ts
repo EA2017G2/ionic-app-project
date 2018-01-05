@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {PlayPage} from "../play/play";
+import {AccountPage} from "../account/account";
+import {HelpPage} from "../help/help";
 import {UserService} from "../services/user.service";
 import {User } from '../user';
 
@@ -29,4 +31,16 @@ export class ProfilePage {
   onClick(){
     this.navCtrl.setRoot(PlayPage);
   }
+
+
+  onClick1(){
+    this.navCtrl.setRoot(AccountPage);
+  }
+
+
+  onClick2(){
+    this.navCtrl.setRoot(HelpPage);
+  }
+
+
 }

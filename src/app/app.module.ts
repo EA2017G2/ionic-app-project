@@ -22,6 +22,8 @@ import { AuthService } from '../pages/auth/authService';
 import { HttpClientModule } from '@angular/common/http';
 import {UserService} from "../pages/services/user.service";
 import { Facebook } from '@ionic-native/facebook';
+import { WebsocketService } from '../pages/services/websocket.service';
+import { ChatService } from '../pages/services/chat.service';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { Facebook } from '@ionic-native/facebook';
     UserService,
     Facebook,
     SplashScreen,
+    WebsocketService,
+    ChatService,
     { provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true

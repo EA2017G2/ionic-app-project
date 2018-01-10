@@ -16,6 +16,7 @@ export class ProfilePage {
 
   }
   onClick(){
-    this.navCtrl.setRoot(TabsPage);
+    console.log("hola");
+   // this.navCtrl.setRoot(TabsPage);
   }
 }

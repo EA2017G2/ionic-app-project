@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {PlayPage} from "../play/play";
+import {PicturesPage} from "../pictures/pictures";
 
 @Component({
   selector: 'page-account',
@@ -13,5 +14,8 @@ export class AccountPage {
   }
   onClick(){
     this.navCtrl.setRoot(PlayPage);
+  }
+  onClick1(){
+    this.navCtrl.setRoot(PicturesPage);
   }
 }

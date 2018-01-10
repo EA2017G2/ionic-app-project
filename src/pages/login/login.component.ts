@@ -9,6 +9,7 @@ import { RegisterPage } from '../register/register.component';
 import { ForgetPasswordPage} from '../forgetpassword/forgetpassword';
 import { Facebook } from '@ionic-native/facebook';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html'
@@ -20,7 +21,6 @@ export class LoginComponent {
   constructor ( public navCtrl: NavController, private userService: UserService, private facebook: Facebook) {
     console.log('Hello user');
     this.user = new User();
-
   }
   submitted = false;
   onSubmit() {
@@ -28,6 +28,7 @@ export class LoginComponent {
     this.userService.login(this.user).subscribe( res => {
       console.log('Res: ' + res.token);
       localStorage.setItem('token', res.token);
+     // this.navCtrl.setRoot(TabsPage);
       this.navCtrl.setRoot(TabsPage);
     }, error => {
       console.log('Ha habido un error en el login:' + error);

@@ -7,6 +7,7 @@ import { ContactsPage } from '../pages/contacts/contacts';
 import { PlayPage } from '../pages/play/play';
 import { ChatPage } from '../pages/chat/chat';
 import { TabsPage } from '../pages/tabs/tabs';
+import { PicturesPage } from '../pages/pictures/pictures';
 import { RegisterPage } from '../pages/register/register.component';
 import { ForgetPasswordPage } from '../pages/forgetpassword/forgetpassword';
 import { LoginComponent } from '../pages/login/login.component';
@@ -21,12 +22,12 @@ import { AuthService } from '../pages/auth/authService';
 import { HttpClientModule } from '@angular/common/http';
 import {UserService} from "../pages/services/user.service";
 import { Facebook } from '@ionic-native/facebook';
-
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
     PlayPage,
+    PicturesPage,
     RegisterPage,
     ContactsPage,
     ChatPage,
@@ -52,6 +53,7 @@ import { Facebook } from '@ionic-native/facebook';
     ForgetPasswordPage,
     ContactsPage,
     AccountPage,
+    PicturesPage,
     PlaystartedPage,
     PlayPage,
     RegisterPage,

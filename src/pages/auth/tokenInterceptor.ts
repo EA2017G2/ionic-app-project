@@ -20,7 +20,10 @@ export class TokenInterceptor implements HttpInterceptor {
         authHeader = 'MAGIC_TOKEN';
      }
      const authReq = request.clone({
-       headers: request.headers.set('Authorization', authHeader)
+       setHeaders: {
+         Authorization: `Bearer ${this.auth.getToken()}`
+       }
+       //headers: request.headers.set('Authorization', authHeader)
      });
      // Pass on the cloned request instead of the original request.
      /* const dupRequest = request.clone({

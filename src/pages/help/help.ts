@@ -13,14 +13,7 @@ export class HelpPage {
 
   }
 
-  onClick(){
-    this.navCtrl.setRoot(LoginComponent);
-  }
 
-
-  onClick2(){
-    this.navCtrl.setRoot(RegisterPage);
-  }
   /*onClick33(){
     this.navCtrl.setRoot(ForgetPasswordPage);
   }

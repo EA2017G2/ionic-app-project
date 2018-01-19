@@ -61,6 +61,19 @@ export class UserService {
     return this.http.get<User>(url, {headers: this.headers})
       .map(res => {
         console.log('headerProfile2:' , this.headers);
+        return res;
+      })
+      .catch(this.handleError);
+  }
+
+  filter(showme): Observable<User> {
+    console.log(showme);
+    const url = `${this.apiURL}/filter`;
+    console.log(url);
+    console.log('headerProfile1:', this.headers);
+    return this.http.post<User>(url, {orientation : showme.toString()}, {headers: this.headers})
+      .map(res => {
+        return res;
       })
       .catch(this.handleError);
   }

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
-
+import { ResponseContentType } from '@angular/http';
 import {User} from '../user';
 
 
@@ -66,6 +66,7 @@ export class UserService {
       .catch(this.handleError);
   }
 
+
   filter(showme): Observable<User> {
     console.log(showme);
     const url = `${this.apiURL}/filter`;
@@ -78,7 +79,16 @@ export class UserService {
       .catch(this.handleError);
   }
 
-
+  settings(username, city, pass1): Observable<User> {
+    const url = `${this.apiURL}/settings`;
+    console.log(url);
+    console.log('headerProfile1:', this.headers);
+    return this.http.post<User>(url, {username : username.toString(), city : city.toString(), pass1 : pass1.toString()}, {headers: this.headers})
+      .map(res => {
+        return res;
+      })
+      .catch(this.handleError);
+  }
 
   private handleError(error: any): Promise<any> { // errores del http
     console.error('An error occurred', error); // for demo purposes only

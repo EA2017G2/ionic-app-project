@@ -22,6 +22,13 @@ import { AuthService } from '../pages/auth/authService';
 import { HttpClientModule } from '@angular/common/http';
 import {UserService} from "../pages/services/user.service";
 import { Facebook } from '@ionic-native/facebook';
+import { WebsocketService } from '../pages/services/websocket.service';
+import { ChatService } from '../pages/services/chat.service';
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -65,6 +72,12 @@ import { Facebook } from '@ionic-native/facebook';
     UserService,
     Facebook,
     SplashScreen,
+    WebsocketService,
+    File,
+    Transfer,
+    Camera,
+    FilePath,
+    ChatService,
     { provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true

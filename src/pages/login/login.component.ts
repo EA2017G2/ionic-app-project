@@ -40,8 +40,8 @@ export class LoginComponent {
   }
   regisClick(){
     this.navCtrl.push(RegisterPage);
-
   }
+
   passClick(){
     this.navCtrl.push(ForgetPasswordPage);
 

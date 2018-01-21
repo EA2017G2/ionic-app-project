@@ -28,7 +28,10 @@ export class ProfilePage {
       console.log('Error al mostrar Perfil de User:' + error);
     });
   }
-  onClick(){
+  onClick(showme, age){
+  console.log(showme, age);
+    this.userService.filter(showme).subscribe(res => {
+    });
     this.navCtrl.setRoot(PlayPage);
   }
 

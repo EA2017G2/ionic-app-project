@@ -13,30 +13,34 @@
 
     <ion-slides>
       <ion-slide>
-        <!--  <img src="../../assets/imgs/girl4.jpg" -->
-        </ion-slide>
-        <ion-slide>
-          <!--    <img src="../../assets/imgs/girl1.png"> -->
-            </ion-slide>
-            <ion-slide>
-              <!--    <img src="../../assets/imgs/girl2.png"> -->
-                </ion-slide>
-              </ion-slides>
+        <img src="../../assets/imgs/girl4.jpg">
+      </ion-slide>
+    </ion-slides>
+  </ion-list>
 
-              <p>
+  <ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        Devdactic Image Upload
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
 
-                  <ion-icon name='add' (click)=onClick5()></ion-icon>
+  <ion-content padding>
+    <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+    <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
+  </ion-content>
 
-
-                <button ion-button color="danger" icon-start>
-                  <ion-icon name='close'></ion-icon>
-                  Remove picture
-                </button>
-              </p>
-
-
-
-
-
-            </ion-list>
-          </ion-content>
+  <ion-footer>
+    <ion-toolbar color="primary">
+      <ion-buttons>
+        <button ion-button icon-left (click)="presentActionSheet()">
+          <ion-icon name="camera"></ion-icon>Select Image
+        </button>
+        <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
+          <ion-icon name="cloud-upload"></ion-icon>Upload
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

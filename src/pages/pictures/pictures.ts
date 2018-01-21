@@ -8,7 +8,8 @@ import { Camera } from '@ionic-native/camera';
 import {PlayPage} from "../play/play";
 import {UserService} from "../services/user.service";
 import {User } from '../user';
-declare let cordova: any
+declare let cordova: any;
+
 @Component({
   selector: 'page-pictures',
   templateUrl: 'pictures.html'
@@ -26,9 +27,9 @@ export class PicturesPage {
       this.user = res[0];
       //  this.user = res;
       console.log('Welcome to :', this.user.email);
-      this.email= this.user.email;
-      this.imgUrl="http://localhost:3000/imgs/"+this.user.email+".jpg";
-      console.log("url: "+this.imgUrl);
+      this.email = this.user.email;
+      this.imgUrl = "http://localhost:3000/imgs/" + this.user.email + ".jpg";
+      console.log("url: " + this.imgUrl);
     }, error => {
       console.log('Error al mostrar Perfil de User:' + error);
     });
@@ -61,7 +62,7 @@ export class PicturesPage {
 
   public takePicture(sourceType) {
     // Create options for the Camera Dialog
-    var options = {
+    let options = {
       quality: 100,
       sourceType: sourceType,
       saveToPhotoAlbum: false,
@@ -79,8 +80,8 @@ export class PicturesPage {
             this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
           });
       } else {
-        var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
-        var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
+        let currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
+        let correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
         this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
       }
     }, (err) => {
@@ -92,7 +93,7 @@ export class PicturesPage {
   private createFileName() {
     var d = new Date(),
       n = d.getTime(),
-      newFileName =  n + ".jpg";
+      newFileName = n + ".jpg";
     return newFileName;
   }
 
@@ -114,7 +115,7 @@ export class PicturesPage {
     toast.present();
   }
 
-// Always get the accurate path to your apps folder
+  // Always get the accurate path to your apps folder
   public pathForImage(img) {
     if (img === null) {
       return '';
@@ -126,20 +127,20 @@ export class PicturesPage {
 
   public uploadImage() {
     // Destination URL
-    var url = "http://yoururl/upload.php";
+    let url = "http://yoururl/upload.php";
 
     // File for Upload
-    var targetPath = this.pathForImage(this.lastImage);
+    let targetPath = this.pathForImage(this.lastImage);
 
     // File name only
-    var filename = this.lastImage;
+    let filename = this.lastImage;
 
-    var options = {
+    let options = {
       fileKey: "file",
       fileName: filename,
       chunkedMode: false,
       mimeType: "multipart/form-data",
-      params : {'fileName': filename}
+      params: {'fileName': filename}
     };
 
     const fileTransfer: TransferObject = this.transfer.create();
@@ -151,19 +152,20 @@ export class PicturesPage {
 
     // Use the FileTransfer to upload the image
     fileTransfer.upload(targetPath, url, options).then(data => {
-      this.loading.dismissAll()
+      this.loading.dismissAll();
       this.presentToast('Image succesful uploaded.');
     }, err => {
-      this.loading.dismissAll()
+      this.loading.dismissAll();
       this.presentToast('Error while uploading file.');
     });
   }
+
   onClick(){
     this.navCtrl.setRoot(PlayPage);
   }
 
-  onClick2(newpic){
-  console.log(newpic);
+  onClick2(newpic) {
+    console.log(newpic);
   }
 }
 

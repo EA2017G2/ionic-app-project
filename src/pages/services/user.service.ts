@@ -5,13 +5,14 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
-import { ResponseContentType } from '@angular/http';
+//import { ResponseContentType } from '@angular/http';
 import {User} from '../user';
 
 
 @Injectable()
 export class UserService {
   private apiURL = 'http://localhost:3000/api/users';
+  private updateUrl = 'http://localhost:3000/api/users/update';
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
 
   us: User;
@@ -73,6 +74,25 @@ export class UserService {
     console.log(url);
     console.log('headerProfile1:', this.headers);
     return this.http.post<User>(url, {orientation : showme.toString()}, {headers: this.headers})
+      .map(res => {
+        return res;
+      })
+      .catch(this.handleError);
+  }
+  updateName(user: User): Observable<User>{
+    const url = `${this.updateUrl}/name/${user.name}`;
+    console.log(url);
+    return this.http.put(url, JSON.stringify(user), {headers: this.headers})
+      .map(res => {
+        return res;
+      })
+      .catch(this.handleError);
+  }
+  updateCity(user: User): Observable<User>{
+    console.log(user);
+    const url = `${this.updateUrl}/city/${user.city}`;
+    console.log(url);
+    return this.http.put(url, JSON.stringify(user), {headers: this.headers})
       .map(res => {
         return res;
       })

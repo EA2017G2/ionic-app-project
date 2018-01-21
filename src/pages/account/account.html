@@ -16,26 +16,33 @@
     <ion-list-header>
       Change username
     </ion-list-header>
-    <ion-item [(ngModel)]="username">
-      <ion-label floating>New username</ion-label>
-      <ion-input type="text"></ion-input>
+    <ion-item>
+      <ion-label floating>New name</ion-label>
+      <ion-input type="text" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
+    <ion-item>
+      <button ion-button (click)="onClick(user)" color="principal" medium full><ion-icon name="done-all"></ion-icon>
+      </button>
+    </ion-item>
+
+
 
 
 
     <ion-list-header>
       Change city
     </ion-list-header>
-    <ion-item [(ngModel)]="city">
+    <ion-item>
       <ion-label floating>Current city</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.city" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="onClick2(user)" color="principal" medium full><ion-icon name="done-all"></ion-icon>
+      </button>
     </ion-item>
 
 
-
-
-
-    <ion-list-header>
+  <!--  <ion-list-header>
       Change password
     </ion-list-header>
     <ion-item [(ngModel)]="pass1">
@@ -46,7 +53,7 @@
         <ion-label floating>Repeat new password</ion-label>
         <ion-input type="text"></ion-input>
       </ion-item>
-
+  -->
 
 
     <ion-list-header>
@@ -62,11 +69,13 @@
 
 
 
-    <br>
+  <!--  <br>
     <br>
     <div class="row">
-      <button ion-button (click)="onClick(username, city, pass1, pass2)" color="principal" medium full>Apply changes</button>
+      <button ion-button (click)="onClick(user)" color="principal" medium full>Apply changes <ion-icon name="done-all"></ion-icon></button>
     </div>
+-->
 
   </ion-list>
+
 </ion-content>

@@ -13,7 +13,7 @@ import {User } from '../user';
 export class AccountPage {
   user: User;
   constructor(public navCtrl: NavController, private userService: UserService) {
-
+    this.user = new User();
   }
 
   profile(){
@@ -26,13 +26,19 @@ export class AccountPage {
     });
   }
 
-  onClick(username, city, pass1, pass2){
-    console.log(username, city, pass1, pass2);
-    if(pass1===pass2) {
+  onClick(user: User){
+    console.log(user);
+    this.userService.updateName(user).subscribe();
+  /* if(pass1===pass2) {
       this.userService.settings(username, city, pass1).subscribe(res => {
       });
     }
-    else(alert("Contraseñas diferentes"));
+    else(alert("Contraseñas diferentes"));*/
+    this.navCtrl.setRoot(PlayPage);
+  }
+  onClick2(user: User){
+    console.log('click2',user);
+    this.userService.updateCity(user).subscribe();
     this.navCtrl.setRoot(PlayPage);
   }
   onClick1(){

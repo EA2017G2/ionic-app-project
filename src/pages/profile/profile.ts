@@ -18,6 +18,7 @@ export class ProfilePage {
 
   constructor(public navCtrl: NavController, private userService: UserService) {
   this.profile();
+  this.user = new User();
   }
   profile(){
     this.userService.profile().subscribe(res => {

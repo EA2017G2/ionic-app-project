@@ -5,6 +5,8 @@ import {User} from '../../../../ionic-app-project/src/pages/user';
 import { UserService} from '../services/user.service';
 import {PlayPage} from '../play/play';
 import { ProfilePage } from '../profile/profile';
+import {HttpErrorResponse} from '@angular/common/http';
+import {AlertController} from 'ionic-angular';
 import { RegisterPage } from '../register/register.component';
 import { ForgetPasswordPage} from '../forgetpassword/forgetpassword';
 import { Facebook } from '@ionic-native/facebook';
@@ -16,9 +18,12 @@ import { Facebook } from '@ionic-native/facebook';
 })
 export class LoginComponent {
   user: User;
+  mess: string;
   showUser: boolean = false;
+  // private headResponse = new HttpResponse({'Content-Type': 'application/json'});
 
-  constructor ( public navCtrl: NavController, private userService: UserService, private facebook: Facebook) {
+
+  constructor ( public navCtrl: NavController, private userService: UserService, private facebook: Facebook, private alertCtrl: AlertController) {
     console.log('Hello user');
     this.user = new User();
   }
@@ -28,10 +33,24 @@ export class LoginComponent {
     this.userService.login(this.user).subscribe( res => {
       console.log('Res: ' + res.token);
       localStorage.setItem('token', res.token);
-     // this.navCtrl.setRoot(TabsPage);
+     // this.navCtrl.setRoot(TabsPage)
       this.navCtrl.setRoot(TabsPage);
-    }, error => {
-      console.log('Ha habido un error en el login:' + error);
+
+
+    }, (err: HttpErrorResponse ) => {
+      /*if(err.error instanceof Error){
+        console.error('An error occurred', err.error.message); // for demo purposes only
+
+       // console.log('Ha habido un error en el login:' + error.error.message);
+      } else {
+        console.log('Backend:', err.error);
+        console.log('Backend:', err.message);
+      }*/
+      let alert = this.alertCtrl.create({
+        title: 'Login failed.Please enter the correct credentials!'
+      });
+      alert.present();
+    console.log('Ha habido un error en el login:' + err);
     });
 
   }

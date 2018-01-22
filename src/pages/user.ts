@@ -8,4 +8,5 @@ export class User {
   birthday: Date;
   imageProfile: any;
   token: any;
+  //message: string;
 }

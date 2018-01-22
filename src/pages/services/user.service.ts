@@ -61,6 +61,7 @@ export class UserService {
     return this.http.get<User>(url, {headers: this.headers})
       .map(res => {
         console.log('headerProfile2:' , this.headers);
+        return res;
       })
       .catch(this.handleError);
   }

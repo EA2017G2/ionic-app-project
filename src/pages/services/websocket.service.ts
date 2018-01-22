@@ -26,9 +26,9 @@ export class WebsocketService {
         return ws.close.bind(ws);
       });
     const observer = {
-      next: (data: Object) => {
+      next: (data: String) => {
         if (ws.readyState === WebSocket.OPEN) {
-          ws.send(JSON.stringify(data));
+          ws.send(data);
         }
       }
     };

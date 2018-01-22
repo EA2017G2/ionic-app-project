@@ -4,24 +4,16 @@ import { WebsocketService } from './websocket.service';
 
 const CHAT_URL = 'ws://127.0.0.1:8080';
 
-export interface Message {
-  author: string;
-  message: string;
-}
-
 @Injectable()
 export class ChatService {
-  public messages: Subject<Message>;
+  public messages: Subject<String>;
 
   constructor(wsService: WebsocketService) {
-    this.messages = <Subject<Message>>wsService
+    this.messages = <Subject<String>>wsService
       .connect(CHAT_URL)
-      .map((response: MessageEvent): Message => {
-        const data = JSON.parse(response.data);
-        return {
-          author: data.author,
-          message: data.message
-        };
+      .map((response: MessageEvent): String => {
+        const data = response.data;
+        return data;
       });
   }
 }

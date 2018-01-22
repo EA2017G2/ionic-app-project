@@ -12,17 +12,12 @@ export class ChatPage {
     chatService.messages.subscribe(msg => {
       console.log('Response from websocket: ' + msg);
     });
+    this.sendMsg("xavi", "hola, que tal", "paula");
   }
 
-  private message = {
-    author: 'tutorialedge',
-    message: 'this is a test message'
-  };
-
-  sendMsg() {
-    console.log('new message from client to websocket: ', this.message);
-    this.chatService.messages.next(this.message);
-    this.message.message = '';
+  sendMsg(from, message, to) {
+    console.log('new message from client to websocket: ', message);
+    this.chatService.messages.next(from + ":" + message + ":" + to);
   }
 
 }
